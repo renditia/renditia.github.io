@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Icon -->
+    <!-- <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css"> -->
+
+    <!-- Main css -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <link rel="stylesheet" href="css/mystyle.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // alert("Masuk!")
+            $("#AddMe").click(function () {
+                // insert data array
+                clickAdd();
+                //show list
+                showList(arrMahasiwa);
+                $("#totallist").html(arrMahasiwa.length);
+            })
+
+            // $("#showlst").click(function(){
+            //      $("#totallist").html(arrMahasiwa.length);
+            // })
+
+            $("#resetlist").click(function(){
+                resetDataList();
+                $("#totallist").html(arrMahasiwa.length);
+            })
+
+            function clickAdd() {
+                var nama = $("#nama").val();
+                var alamat = $("#alamat").val();
+                var npm = $("#npm").val();
+                var imgfth = $("#imgfth").val();
+                //insert object
+                var objmhs = objMahasiswa(nama, alamat, npm,imgfth);
+                //push array
+                addMahaSiswa(objmhs);
+               
+            }
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="formcontainer">
+        <h3>Latihan Object !</h3>
+        <fieldset>
+            <legend>Latihan Object !</legend>
+            <div class="container">
+                <form action="">
+                    <div>
+                        <br>
+                        <label for="nama">Nama</label><br>
+                        <input type="text" id="nama" placeholder="Nama">
+                    </div>
+
+                    <div>
+                        <br>
+                        <label for="alamat">Alamat</label><br>
+                        <input type="text" id="alamat" placeholder="Alamat">
+                    </div>
+
+                    <div>
+                        <br>
+                        <label for="npm">No Pokok Mahasiswa</label><br>
+                        <input type="text" id="npm" placeholder="No Pokok Mahasiswa">
+                    </div>
+
+                    <div>
+                            <br>
+                            <label for="imgfth">Fhoto Img</label><br>
+                            <input type="text" id="imgfth" placeholder="Fhoto Img e.g : 1.jpg">
+                        </div>
+
+                </form>
+                <br>
+                <div>
+                    <button id="AddMe">Add List</button> || <button id="resetlist">Reset List</button>
+                </div>
+                <div><h3>Total List : <span class="showlist" id="totallist"></span> </h3></div>
+            </div>
+        </fieldset>
+    </div>
+
+    <h3 class="textcenter">List Mahasiwa BKM 004</h3>
+    <hr>
+    <div class="content">
+        <!-- <div clas="text">
+            <img src="images/1.jpg" alt="">
+            <div>Rendi Pratama</div>
+            <div>0615124006</div>
+            <div><i>Jl. Antasari III No.36</i></div>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
